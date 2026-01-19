@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MD Pickles | Authentic Andhra Pickles</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{box-sizing:border-box}
+
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(120deg,#fff7ef,#ffe6d5);
+  color:#333;
+}
+
+/* HEADER */
+header{
+  background:linear-gradient(135deg,#b71c1c,#7f0000);
+  color:#fff;
+  padding:30px 20px;
+  text-align:center;
+}
+
+/* NAV */
+nav{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  background:#7f0000;
+  padding:12px;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:600;
+  padding:6px 14px;
+  border-radius:20px;
+}
+nav a:hover{background:rgba(255,255,255,.25)}
+
+/* HERO */
+.hero{
+  height:70vh;
+  background:url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=80') center/cover;
+  position:relative;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  color:#fff;
+}
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,.55);
+}
+.hero div{position:relative}
+.hero h1{font-size:3rem}
+.hero p{font-size:1.2rem}
+
+/* SECTIONS */
+.section{
+  max-width:1200px;
+  margin:auto;
+  padding:60px 20px;
+}
+h2{
+  text-align:center;
+  color:#b71c1c;
+  font-size:2.2rem;
+}
+.subtitle{
+  text-align:center;
+  color:#555;
+  margin-bottom:40px;
+}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+.card{
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.12);
+  transition:.4s;
+  text-align:center;
+}
+.card:hover{transform:translateY(-8px)}
+.card img{
+  width:100%;
+  border-radius:15px;
+  transition:.4s;
+}
+.card:hover img{transform:scale(1.1)}
+
+.size-selector button{
+  padding:8px 16px;
+  margin:5px;
+  border-radius:20px;
+  border:1px solid #ddd;
+  background:#f4f4f4;
+  cursor:pointer;
+}
+.size-selector .selected{
+  background:#ff5722;
+  color:#fff;
+  border:none;
+}
+
+.quantity-selector{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+}
+.quantity-selector button{
+  width:35px;
+  height:35px;
+  border-radius:50%;
+  border:none;
+  background:#eee;
+  font-size:18px;
+  cursor:pointer;
+}
+.quantity-selector button:hover{
+  background:#ff5722;
+  color:#fff;
+}
+
+.add-to-cart{
+  margin-top:15px;
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+  background:linear-gradient(45deg,#ff5722,#b71c1c);
+  color:#fff;
+  font-weight:600;
+  cursor:pointer;
+}
+
+/* CART */
+#cart{
+  background:#fff3e0;
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+#cart input,#cart textarea{
+  width:90%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #ddd;
+  margin:6px 0;
+}
+
+/* FOOTER */
+footer{
+  background:#7f0000;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+  position:fixed;
+  bottom:25px;
+  right:25px;
+  background:#25D366;
+  color:#fff;
+  padding:15px 22px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>MD PICKLES</h1>
+<p>Authentic Homemade Andhra Non-Veg Pickles</p>
+</header>
+
+<nav>
+<a href="#home">Home</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section class="hero" id="home">
+<div>
+<h1>Authentic Andhra Non-Veg Pickles</h1>
+<p><b>Handcrafted • Slow-Cooked • Packed with Tradition</b></p>
+<p>Made in small batches using premium spices</p>
+</div>
+</section>
+
+<section class="section">
+<h2>Why MD Pickles?</h2>
+<p class="subtitle">
+Traditional recipes, preservative-free preparation, rich taste & authentic Andhra flavors.
+</p>
+</section>
+
+<section class="section" id="products">
+<h2>Our Signature Pickles</h2>
+<p class="subtitle">Bold flavors • Authentic spices • Unforgettable taste</p>
+
+<div class="grid">
+
+<!-- PRODUCT -->
+<div class="card">
+  <img src="CHICKEN PICK.jpeg" width="100%" style="border-radius:10px;">
+  <h3>Chicken Pickle</h3>
+  <p>Spicy, fresh and traditional Andhra style.</p>
+
+  <p>Select Size</p>
+  <div class="size-selector">
+    <button class="size-btn selected" data-price="250">250g Rs 250</button>
+    <button class="size-btn" data-price="500">500g Rs 500</button>
+<button class="size-btn" data-price="1000">1kg Rs 1000</button>
+  </div>
+
+  <p>Quantity</p>
+  <div class="quantity-selector">
+    <button class="qty-minus">-</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="PRAWNS PICKEL.jpeg" width="100%" style="border-radius:10px;">
+  <h3>Prawn Pickle</h3>
+  <p>Rich taste with premium spices.</p>
+
+  <p>Select Size</p>
+  <div class="size-selector">
+    <button class="size-btn selected" data-price="400">250g Rs 400</button>
+    <button class="size-btn" data-price="800">500g Rs 800</button>
+<button class="size-btn" data-price="1600">1kg Rs 1600</button>
+  </div>
+
+  <p>Quantity</p>
+  <div class="quantity-selector">
+    <button class="qty-minus">-</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="MUTTON PICKEL.jpeg" width="100%" style="border-radius:10px;">
+  <h3>Mutton Pickle</h3>
+  <p>Rich taste with premium spices.</p>
+
+  <p>Select Size</p>
+  <div class="size-selector">
+    <button class="size-btn selected" data-price="700">250g Rs 700</button>
+    <button class="size-btn" data-price="1300">500g Rs 1300</button>
+<button class="size-btn" data-price="2500">1kg Rs 2500</button>
+  </div>
+
+  <p>Quantity</p>
+  <div class="quantity-selector">
+    <button class="qty-minus">-</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="FISH PICKEL.jpeg" width="100%" style="border-radius:10px;">
+  <h3>Fish Pickle</h3>
+  <p>Enrish Coastal Taste.</p>
+
+  <p>Select Size</p>
+  <div class="size-selector">
+    <button class="size-btn selected" data-price="300">250g Rs 300</button>
+    <button class="size-btn" data-price="600">500g Rs 600</button>
+<button class="size-btn" data-price="1100">1kg Rs 1100</button>
+  </div>
+
+  <p>Quantity</p>
+  <div class="quantity-selector">
+    <button class="qty-minus">-</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="MUTTON-GONGURA PICKEL.jpeg" width="100%" style="border-radius:10px;">
+  <h3>Mutton Gongura Pickel</h3>
+  <p>Rich in taste and spices.</p>
+
+  <p>Select Size</p>
+  <div class="size-selector">
+    <button class="size-btn selected" data-price="700">250g Rs 700</button>
+    <button class="size-btn" data-price="1500">500g Rs 1500</button>
+<button class="size-btn" data-price="2800">1kg Rs 2800</button>
+  </div>
+
+  <p>Quantity</p>
+  <div class="quantity-selector">
+    <button class="qty-minus">-</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+</div>
+
+<div class="card">
+  <img src="CHICKEN-GONGURA PICKEL.jpeg" width="100%" style="border-radius:10px;">
+  <h3>Chicken Gongura Pickel</h3>
+  <p>Rich in taste and spices.</p>
+
+  <p>Select Size</p>
+  <div class="size-selector">
+    <button class="size-btn selected" data-price="350">250g Rs 350</button>
+    <button class="size-btn" data-price="700">500g Rs 700</button>
+<button class="size-btn" data-price="1300">1kg Rs 1300</button>
+  </div>
+
+  <p>Quantity</p>
+  <div class="quantity-selector">
+    <button class="qty-minus">-</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+</div>
+
+</div>
+</section>
+
+<section class="section" id="cart">
+<h2>Your Order Summary</h2>
+<div id="cart-items"></div>
+<p><b>Total: Rs  <span id="total">0</span></b></p>
+
+<h3>Delivery Information</h3>
+<input id="name" placeholder="Full Name">
+<input id="phone" placeholder="Mobile Number">
+<textarea id="address" placeholder="Complete Address"></textarea>
+
+<button id="checkout" style="padding:10px 20px;background:#4caf50;color:white;border:none;border-radius:8px;font-weight:bold;cursor:pointer;">Order Securely via WhatsApp</button>
+</section>
+
+<section class="section" id="contact" style="text-align:center">
+<h2>Get in Touch</h2>
+<p>📞 Call / WhatsApp: <b>9347014563</b></p>
+<p>Home-Made Pickles • Freshly Prepared • Andhra Style</p>
+</section>
+
+<footer>
+<p><b>MD Pickles – Taste the Tradition</b></p>
+<p>© 2026 MD Pickles. All Rights Reserved.</p>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919347014563">WhatsApp Order</a>
+
+<script>
+let cart=[];
+
+// Initialize product cards
+document.querySelectorAll('.card').forEach(card => {
+  let selectedPrice = parseInt(card.querySelector('.size-btn.selected').dataset.price);
+  let quantity = 1;
+
+  // Size selection
+  card.querySelectorAll('.size-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      card.querySelectorAll('.size-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedPrice = parseInt(btn.dataset.price);
+    });
+  });
+
+  // Quantity control
+  const qtyValue = card.querySelector('.qty-value');
+
+  card.querySelector('.qty-minus').addEventListener('click', () => {
+    if (quantity > 1) quantity--;
+    qtyValue.textContent = quantity;
+  });
+
+  card.querySelector('.qty-plus').addEventListener('click', () => {
+    quantity++;
+    qtyValue.textContent = quantity;
+  });
+
+  // Add to cart
+  card.querySelector('.add-to-cart').addEventListener('click', () => {
+    const name = card.querySelector('h3').innerText;
+    const size = card.querySelector('.size-btn.selected').innerText;
+
+    const existing = cart.find(
+      item => item.name === name && item.price === selectedPrice && item.size === size
+    );
+
+    if (existing) {
+      existing.qty += quantity;
+    } else {
+      cart.push({
+        name: name,
+        size: size,
+        price: selectedPrice,
+        qty: quantity
+      });
+    }
+
+    updateCart();
+    alert(`${quantity} x ${name} (${size}) added to cart`);
+
+    quantity = 1;
+    qtyValue.textContent = 1;
+  });
+});
+
+// Update cart UI
+function updateCart() {
+  const cartItemsDiv = document.getElementById('cart-items');
+  cartItemsDiv.innerHTML = '';
+  let total = 0;
+
+  cart.forEach(item => {
+    cartItemsDiv.innerHTML += `
+      <p>
+        <b>${item.name}</b><br>
+        Size: ${item.size}<br>
+        Qty: ${item.qty} * Rs ${item.price} =
+        <b>Rs ${item.qty * item.price}</b>
+      </p>
+    `;
+    total += item.qty * item.price;
+  });
+
+  document.getElementById('total').innerText = total;
+}
+
+// WhatsApp checkout
+document.getElementById('checkout').addEventListener('click', () => {
+ const name = document.getElementById('name').value.trim();
+const phone = document.getElementById('phone').value.trim();
+const address = document.getElementById('address').value.trim();
+
+
+  if (!name || !phone || !address) {
+    alert('Please fill in all your details.');
+    return;
+  }
+
+  if (cart.length === 0) {
+    alert('Your cart is empty!');
+    return;
+  }
+
+  let message = `Order Details:%0A%0A`;
+
+  cart.forEach(item => {
+    message += `• ${item.name}%0A`;
+    message += `  Size: ${item.size}%0A`;
+    message += `  Quantity: ${item.qty}%0A`;
+    message += `  Amount: Rs ${item.qty * item.price}%0A%0A`;
+  });
+
+  const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+
+  message += `Total: Rs ${total}%0A%0A`;
+  message += `Customer Details:%0A`;
+  message += `Name: ${name}%0A`;
+  message += `Phone: ${phone}%0A`;
+  message += `Address: ${address}`;
+
+  window.open(`https://wa.me/919347014563?text=${message}`, '_blank');
+});
+</script>
+
+
+<a class="whatsapp" href="https://wa.me/919347014563">WhatsApp Order</a>
+
+
+<script>
+/* Scroll animation */
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+});
+document.querySelectorAll('.card').forEach(c=>{
+  c.classList.add('fade-up');
+  observer.observe(c);
+});
+</script>
+
+</body>
+</html>
