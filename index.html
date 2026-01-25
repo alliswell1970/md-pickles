@@ -8,10 +8,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  margin:0;
   font-family:'Poppins',sans-serif;
   background:linear-gradient(120deg,#fff7ef,#ffe6d5);
   color:#333;
@@ -21,17 +20,20 @@ body{
 header{
   background:linear-gradient(135deg,#b71c1c,#7f0000);
   color:#fff;
-  padding:30px 20px;
+  padding:22px 15px;
   text-align:center;
 }
+header h1{font-size:2rem}
+header p{font-size:.95rem}
 
 /* NAV */
 nav{
   display:flex;
+  flex-wrap:wrap;
   justify-content:center;
-  gap:25px;
+  gap:10px;
   background:#7f0000;
-  padding:12px;
+  padding:10px;
   position:sticky;
   top:0;
   z-index:1000;
@@ -42,12 +44,13 @@ nav a{
   font-weight:600;
   padding:6px 14px;
   border-radius:20px;
+  font-size:.9rem;
 }
 nav a:hover{background:rgba(255,255,255,.25)}
 
 /* HERO */
 .hero{
-  height:70vh;
+  min-height:60vh;
   background:url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=80') center/cover;
   position:relative;
   display:flex;
@@ -55,6 +58,7 @@ nav a:hover{background:rgba(255,255,255,.25)}
   align-items:center;
   text-align:center;
   color:#fff;
+  padding:20px;
 }
 .hero::before{
   content:'';
@@ -62,58 +66,67 @@ nav a:hover{background:rgba(255,255,255,.25)}
   inset:0;
   background:rgba(0,0,0,.55);
 }
-.hero div{position:relative}
-.hero h1{font-size:3rem}
-.hero p{font-size:1.2rem}
+.hero div{position:relative;max-width:800px}
+.hero h1{font-size:2.2rem;margin-bottom:10px}
+.hero p{font-size:1rem}
 
-/* SECTIONS */
+/* SECTION */
 .section{
   max-width:1200px;
   margin:auto;
-  padding:60px 20px;
+  padding:45px 15px;
 }
 h2{
   text-align:center;
   color:#b71c1c;
-  font-size:2.2rem;
+  font-size:1.8rem;
 }
 .subtitle{
   text-align:center;
   color:#555;
-  margin-bottom:40px;
+  margin:15px 0 35px;
+  font-size:.95rem;
 }
 
 /* GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:30px;
+  gap:25px;
 }
 
 /* CARD */
 .card{
   background:#fff;
   border-radius:18px;
-  padding:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.12);
-  transition:.4s;
+  padding:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  transition:.3s;
   text-align:center;
 }
-.card:hover{transform:translateY(-8px)}
+.card:hover{transform:translateY(-6px)}
 .card img{
   width:100%;
-  border-radius:15px;
-  transition:.4s;
+  border-radius:14px;
+  margin-bottom:10px;
 }
-.card:hover img{transform:scale(1.1)}
+.card h3{margin:8px 0}
+.card p{font-size:.9rem}
 
+/* SIZE */
+.size-selector{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
 .size-selector button{
-  padding:8px 16px;
+  padding:7px 14px;
   margin:5px;
   border-radius:20px;
   border:1px solid #ddd;
   background:#f4f4f4;
   cursor:pointer;
+  font-size:.85rem;
 }
 .size-selector .selected{
   background:#ff5722;
@@ -121,14 +134,17 @@ h2{
   border:none;
 }
 
+/* QUANTITY */
 .quantity-selector{
   display:flex;
   justify-content:center;
-  gap:10px;
+  align-items:center;
+  gap:12px;
+  margin:10px 0;
 }
 .quantity-selector button{
-  width:35px;
-  height:35px;
+  width:34px;
+  height:34px;
   border-radius:50%;
   border:none;
   background:#eee;
@@ -140,9 +156,11 @@ h2{
   color:#fff;
 }
 
+/* ADD CART */
 .add-to-cart{
-  margin-top:15px;
-  padding:12px 28px;
+  width:100%;
+  margin-top:12px;
+  padding:12px;
   border:none;
   border-radius:30px;
   background:linear-gradient(45deg,#ff5722,#b71c1c);
@@ -154,15 +172,16 @@ h2{
 /* CART */
 #cart{
   background:#fff3e0;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,.1);
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.1);
 }
 #cart input,#cart textarea{
-  width:90%;
+  width:100%;
   padding:12px;
   border-radius:12px;
   border:1px solid #ddd;
-  margin:6px 0;
+  margin:8px 0;
+  font-size:.9rem;
 }
 
 /* FOOTER */
@@ -170,20 +189,29 @@ footer{
   background:#7f0000;
   color:#fff;
   text-align:center;
-  padding:25px;
+  padding:22px 10px;
+  font-size:.9rem;
 }
 
 /* WHATSAPP */
 .whatsapp{
   position:fixed;
-  bottom:25px;
-  right:25px;
+  bottom:18px;
+  right:18px;
   background:#25D366;
   color:#fff;
-  padding:15px 22px;
+  padding:12px 18px;
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
+  font-size:.9rem;
+}
+
+/* MOBILE FIX */
+@media(max-width:600px){
+  .hero h1{font-size:1.7rem}
+  .hero p{font-size:.95rem}
+  h2{font-size:1.6rem}
 }
 </style>
 </head>
@@ -200,27 +228,20 @@ footer{
 <a href="#products">Products</a>
 <a href="#cart">Cart</a>
 <a href="#contact">Contact</a>
-<a href="https://alliswell1970.github.io/MD-SEAFOODS/">Visit MD SeaFoods</a>
+<a href="https://alliswell1970.github.io/MD-SEAFOODS/">MD SeaFoods</a>
 </nav>
 
 <section class="hero" id="home">
 <div>
 <h1>Authentic Andhra Non-Veg Pickles</h1>
-<p><b>Handcrafted • Slow-Cooked • Packed with Tradition</b></p>
-<p>Made in small batches using premium spices</p>
+<p><b>Handcrafted • Slow-Cooked • Traditional Taste</b></p>
+<p>Prepared in small batches with premium spices</p>
 </div>
-</section>
-
-<section class="section">
-<h2>Why MD Pickles?</h2>
-<p class="subtitle">
-Traditional recipes, preservative-free preparation, rich taste & authentic Andhra flavors.
-</p>
 </section>
 
 <section class="section" id="products">
 <h2>Our Signature Pickles</h2>
-<p class="subtitle">Bold flavors • Authentic spices • Unforgettable taste</p>
+<p class="subtitle">Bold flavors • Authentic spices • Home-made goodness</p>
 
 <div class="grid">
 
@@ -320,7 +341,7 @@ Traditional recipes, preservative-free preparation, rich taste & authentic Andhr
 
   <p>Select Size</p>
   <div class="size-selector">
-    <button class="size-btn selected" data-price="700">250g Rs 700</button>
+    <button class="size-btn selected" data-price="800">250g Rs 800</button>
     <button class="size-btn" data-price="1500">500g Rs 1500</button>
 <button class="size-btn" data-price="2800">1kg Rs 2800</button>
   </div>
@@ -528,7 +549,7 @@ const address = document.getElementById('address').value.trim();
     return;
   }
 
-  let message = `Order Details:%0A%0A`;
+  let message = `Order Details From MD Pickles:%0A%0A`;
 
   cart.forEach(item => {
     message += `• ${item.name}%0A`;
@@ -568,8 +589,6 @@ document.querySelectorAll('.card').forEach(c=>{
 
 </body>
 </html>
-
-
 
 
 
