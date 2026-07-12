@@ -91,7 +91,7 @@ h2{
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
   gap:25px;
 }
 
@@ -228,6 +228,7 @@ footer{
 <a href="#products">Products</a>
 <a href="#cart">Cart</a>
 <a href="#contact">Contact</a>
+<a href="https://alliswell1970.github.io/MD-SEAFOODS/">MD SeaFoods</a>
 </nav>
 
 <section class="hero" id="home">
@@ -533,10 +534,10 @@ function updateCart() {
 
 // WhatsApp checkout
 document.getElementById('checkout').addEventListener('click', () => {
- const name = document.getElementById('name').value.trim();
-const phone = document.getElementById('phone').value.trim();
-const address = document.getElementById('address').value.trim();
 
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  const address = document.getElementById('address').value.trim();
 
   if (!name || !phone || !address) {
     alert('Please fill in all your details.');
@@ -552,20 +553,45 @@ const address = document.getElementById('address').value.trim();
 
   cart.forEach(item => {
     message += `• ${item.name}%0A`;
-    message += `  Size: ${item.size}%0A`;
-    message += `  Quantity: ${item.qty}%0A`;
-    message += `  Amount: Rs ${item.qty * item.price}%0A%0A`;
+    message += `Size: ${item.size}%0A`;
+    message += `Quantity: ${item.qty}%0A`;
+    message += `Amount: Rs ${item.qty * item.price}%0A%0A`;
   });
 
-  const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
+  const total = cart.reduce(
+    (sum, item) => sum + item.qty * item.price,
+    0
+  );
 
   message += `Total: Rs ${total}%0A%0A`;
-  message += `Customer Details:%0A`;
   message += `Name: ${name}%0A`;
   message += `Phone: ${phone}%0A`;
   message += `Address: ${address}`;
 
-  window.open(`https://wa.me/919347014563?text=${message}`, '_blank');
+  const orderData = {
+    name,
+    phone,
+    address,
+    products: cart.map(item =>
+      `${item.name} (${item.size}) x ${item.qty}`
+    ).join(", "),
+    total
+  };
+
+  fetch(
+    "https://script.google.com/macros/s/AKfycbxpM2FF77TEDIVmWZtUHvn6MuV2ENcDukwTF__nBhwoxwtoaZAARU7M28bdpbooKkRBqg/exec",
+    {
+      method: "POST",
+      body: JSON.stringify(orderData)
+    }
+  )
+  .then(() => {
+    window.open(
+      `https://wa.me/919347014563?text=${message}`,
+      "_blank"
+    );
+  });
+
 });
 </script>
 
@@ -588,7 +614,6 @@ document.querySelectorAll('.card').forEach(c=>{
 
 </body>
 </html>
-
 
 
 
