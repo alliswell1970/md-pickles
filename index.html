@@ -8,143 +8,217 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{box-sizing:border-box}
 
 body{
-  font-family:'Poppins',sans-serif;
-  background:linear-gradient(120deg,#fff7ef,#ffe6d5);
-  color:#333;
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#f7f4ef;
+color:#222;
+line-height:1.6;
 }
 
 /* HEADER */
 header{
-  background:linear-gradient(135deg,#b71c1c,#7f0000);
-  color:#fff;
-  padding:22px 15px;
-  text-align:center;
+background:linear-gradient(135deg,#111,#000);
+padding:50px 20px;
+text-align:center;
+border-bottom:3px solid #d4af37;
 }
-header h1{font-size:2rem}
-header p{font-size:.95rem}
+
+header h1{
+font-size:3rem;
+color:#d4af37;
+letter-spacing:3px;
+margin:0;
+}
+
+header p{
+color:#ddd;
+font-size:1.1rem;
+}
 
 /* NAV */
 nav{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-  background:#7f0000;
-  padding:10px;
-  position:sticky;
-  top:0;
-  z-index:1000;
+display:flex;
+justify-content:center;
+gap:30px;
+background:#111;
+padding:15px;
+position:sticky;
+top:0;
+z-index:1000;
+box-shadow:0 3px 15px rgba(0,0,0,.3);
 }
+
 nav a{
-  color:#fff;
-  text-decoration:none;
-  font-weight:600;
-  padding:6px 14px;
-  border-radius:20px;
-  font-size:.9rem;
+color:#d4af37;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
 }
-nav a:hover{background:rgba(255,255,255,.25)}
+
+nav a:hover{
+color:white;
+}
 
 /* HERO */
-.hero{
-  min-height:60vh;
-  background:url('https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1400&q=80') center/cover;
-  position:relative;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#fff;
-  padding:20px;
-}
-.hero::before{
-  content:'';
-  position:absolute;
-  inset:0;
-  background:rgba(0,0,0,.55);
-}
-.hero div{position:relative;max-width:800px}
-.hero h1{font-size:2.2rem;margin-bottom:10px}
-.hero p{font-size:1rem}
 
-/* SECTION */
+
+.hero{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+url('https://images.unsplash.com/photo-1559847844-5315695dadae?auto=format&fit=crop&w=1600&q=80');
+
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+}
+.hero-content{
+max-width:900px;
+padding:20px;
+z-index:2;
+}
+
+.hero h1{
+font-size:72px;
+font-weight:700;
+color:#ffffff;
+margin-bottom:15px;
+line-height:1.1;
+}
+
+.hero p{
+font-size:24px;
+color:#ffffff;
+margin-bottom:30px;
+}
+
+.tagline{
+display:inline-block;
+background:#d4af37;
+color:#111;
+padding:10px 20px;
+border-radius:50px;
+font-weight:600;
+margin-bottom:20px;
+}
+
+.shop-btn{
+background:#d4af37;
+color:#fff;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+margin-right:10px;
+}
+
+.wa-btn{
+background:#25D366;
+color:#fff;
+padding:15px 35px;
+border-radius:50px;
+text-decoration:none;
+font-weight:600;
+}
+/* SECTIONS */
 .section{
   max-width:1200px;
   margin:auto;
-  padding:45px 15px;
+  padding:60px 20px;
 }
 h2{
   text-align:center;
   color:#b71c1c;
-  font-size:1.8rem;
+  font-size:2.2rem;
 }
 .subtitle{
   text-align:center;
   color:#555;
-  margin:15px 0 35px;
-  font-size:.95rem;
+  margin-bottom:40px;
 }
 
 /* GRID */
 .grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:25px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
 }
 
 /* CARD */
 .card{
-  background:#fff;
-  border-radius:18px;
-  padding:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
-  transition:.3s;
-  text-align:center;
+background:#fff;
+border-radius:24px;
+overflow:hidden;
+padding:0;
+box-shadow:0 15px 40px rgba(0,0,0,.08);
 }
-.card:hover{transform:translateY(-6px)}
+
+.card h3{
+padding-top:15px;
+font-size:1.4rem;
+}
+
+.card p{
+padding:0 15px;
+}
+.card{
+background:white;
+border-radius:25px;
+padding:20px;
+text-align:center;
+overflow:hidden;
+box-shadow:0 15px 35px rgba(0,0,0,.12);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
 .card img{
-  width:100%;
-  border-radius:14px;
-  margin-bottom:10px;
+width:100%;
+height:300px;
+object-fit:cover;
+border-radius:15px;
+transition:.4s;
 }
-.card h3{margin:8px 0}
-.card p{font-size:.9rem}
 
-/* SIZE */
-.size-selector{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
+.card:hover img{
+transform:scale(1.05);
 }
-.size-selector button{
-  padding:7px 14px;
-  margin:5px;
-  border-radius:20px;
-  border:1px solid #ddd;
-  background:#f4f4f4;
-  cursor:pointer;
-  font-size:.85rem;
+
+.size-btn{
+padding:10px 18px;
+margin:5px;
+border-radius:30px;
+border:none;
+background:#eee;
+cursor:pointer;
+font-weight:600;
 }
+
 .size-selector .selected{
-  background:#ff5722;
-  color:#fff;
-  border:none;
+background:#d4af37;
+color:white;
 }
 
-/* QUANTITY */
 .quantity-selector{
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:12px;
-  margin:10px 0;
+  gap:10px;
 }
 .quantity-selector button{
-  width:34px;
-  height:34px;
+  width:35px;
+  height:35px;
   border-radius:50%;
   border:none;
   background:#eee;
@@ -156,62 +230,86 @@ h2{
   color:#fff;
 }
 
-/* ADD CART */
 .add-to-cart{
-  width:100%;
-  margin-top:12px;
-  padding:12px;
-  border:none;
-  border-radius:30px;
-  background:linear-gradient(45deg,#ff5722,#b71c1c);
-  color:#fff;
-  font-weight:600;
-  cursor:pointer;
+margin-top:15px;
+padding:12px 30px;
+border:none;
+border-radius:40px;
+background:linear-gradient(135deg,#d4af37,#b8860b);
+color:white;
+font-weight:700;
+cursor:pointer;
 }
 
 /* CART */
 #cart{
   background:#fff3e0;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.1);
+  border-radius:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.1);
 }
 #cart input,#cart textarea{
-  width:100%;
+  width:90%;
   padding:12px;
   border-radius:12px;
   border:1px solid #ddd;
-  margin:8px 0;
-  font-size:.9rem;
+  margin:6px 0;
 }
 
 /* FOOTER */
 footer{
-  background:#7f0000;
-  color:#fff;
-  text-align:center;
-  padding:22px 10px;
-  font-size:.9rem;
+background:#111;
+color:white;
+text-align:center;
+padding:35px 20px;
+border-top:3px solid #d4af37;
 }
 
 /* WHATSAPP */
 .whatsapp{
   position:fixed;
-  bottom:18px;
-  right:18px;
+  bottom:25px;
+  right:25px;
   background:#25D366;
   color:#fff;
-  padding:12px 18px;
+  padding:15px 22px;
   border-radius:50px;
   text-decoration:none;
   font-weight:600;
-  font-size:.9rem;
+}
+.fade-up{
+opacity:0;
+transform:translateY(30px);
+transition:all .8s ease;
 }
 
-/* MOBILE FIX */
-@media(max-width:600px){
-  .hero h1{font-size:1.7rem}
-  .hero p{font-size:.95rem}
-  h2{font-size:1.6rem}
+.fade-up.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:2rem;
+}
+
+.hero p{
+font-size:1rem;
+}
+
+nav{
+flex-wrap:wrap;
+gap:15px;
+}
+
+.card img{
+height:220px;
+}
+
+header h1{
+font-size:2rem;
+}
+
 }
 </style>
 </head>
@@ -228,20 +326,53 @@ footer{
 <a href="#products">Products</a>
 <a href="#cart">Cart</a>
 <a href="#contact">Contact</a>
-
 </nav>
 
-<section class="hero" id="home">
-<div>
-<h1>Authentic Andhra Non-Veg Pickles</h1>
-<p><b>Handcrafted • Slow-Cooked • Traditional Taste</b></p>
-<p>Prepared in small batches with premium spices</p>
+<section class="section">
+<h2>Why Choose MD Pickles?</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>🔥 Freshly Prepared</h3>
+<p>Made in small batches for maximum freshness.</p>
 </div>
+
+<div class="card">
+<h3>🌶 Authentic Andhra Taste</h3>
+<p>Traditional recipes with premium spices.</p>
+</div>
+
+<div class="card">
+<h3>🚚 Fast Delivery</h3>
+<p>Quick shipping across Andhra Pradesh & India.</p>
+</div>
+
+</div>
+</section>
+
+<section class="hero" id="home">
+  <div class="hero-content">
+    <span class="tagline">🔥 Freshly Prepared Daily</span>
+
+    <h1>Premium Andhra Non-Veg Pickles</h1>
+
+    <p>
+      Authentic Taste • No Preservatives • Homemade Quality
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#products" class="shop-btn">Shop Now</a>
+      <a href="https://wa.me/919347014563" class="wa-btn">
+        WhatsApp Order
+      </a>
+    </div>
+  </div>
 </section>
 
 <section class="section" id="products">
 <h2>Our Signature Pickles</h2>
-<p class="subtitle">Bold flavors • Authentic spices • Home-made goodness</p>
+<p class="subtitle">Bold flavors • Authentic spices • Unforgettable taste</p>
 
 <div class="grid">
 
@@ -311,39 +442,17 @@ footer{
 
   <button class="add-to-cart">+ Add to Cart</button>
 </div>
+
 <div class="card">
   <img src="MUTTON BONELESS PICKEL.jpeg" width="100%" style="border-radius:10px;">
   <h3>Mutton BoneLess Pickle</h3>
-  <p>Rich and flavorful mutton pickle made fresh with authentic spices.</p>
+  <p>Rich and flavorful mutton boneless pickle made fresh with authentic spices.</p>
 
   <p>Select Size</p>
   <div class="size-selector">
     <button class="size-btn selected" data-price="750">250g Rs 750</button>
     <button class="size-btn" data-price="1500">500g Rs 1500</button>
 <button class="size-btn" data-price="2900">1kg Rs 2900</button>
-  </div>
-
-  <p>Quantity</p>
-  <div class="quantity-selector">
-    <button class="qty-minus">-</button>
-    <span class="qty-value">1</span>
-    <button class="qty-plus">+</button>
-  </div>
-
-  <button class="add-to-cart">+ Add to Cart</button>
-</div>
-
-  
-<div class="card">
-  <img src="FISH PICKEL.jpeg" width="100%" style="border-radius:10px;">
-  <h3>Fish Pickle</h3>
-  <p>Tangy and spicy fish pickle prepared from fresh boneless fish.</p>
-
-  <p>Select Size</p>
-  <div class="size-selector">
-    <button class="size-btn selected" data-price="300">250g Rs 300</button>
-    <button class="size-btn" data-price="600">500g Rs 600</button>
-<button class="size-btn" data-price="1100">1kg Rs 1100</button>
   </div>
 
   <p>Quantity</p>
@@ -363,7 +472,7 @@ footer{
 
   <p>Select Size</p>
   <div class="size-selector">
-    <button class="size-btn selected" data-price="800">250g Rs 800</button>
+    <button class="size-btn selected" data-price="700">250g Rs 700</button>
     <button class="size-btn" data-price="1500">500g Rs 1500</button>
 <button class="size-btn" data-price="2800">1kg Rs 2800</button>
   </div>
@@ -444,6 +553,28 @@ footer{
   <button class="add-to-cart">+ Add to Cart</button>
 </div>
 
+<div class="card">
+  <img src="FISH PICKEL.jpeg" width="100%" style="border-radius:10px;">
+  <h3>Fish Pickle</h3>
+  <p>Tangy and spicy fish pickle prepared from fresh boneless fish.</p>
+
+  <p>Select Size</p>
+  <div class="size-selector">
+    <button class="size-btn selected" data-price="300">250g Rs 300</button>
+    <button class="size-btn" data-price="600">500g Rs 600</button>
+<button class="size-btn" data-price="1100">1kg Rs 1100</button>
+  </div>
+
+  <p>Quantity</p>
+  <div class="quantity-selector">
+    <button class="qty-minus">-</button>
+    <span class="qty-value">1</span>
+    <button class="qty-plus">+</button>
+  </div>
+
+  <button class="add-to-cart">+ Add to Cart</button>
+</div>
+
 
 </div>
 </section>
@@ -462,6 +593,32 @@ footer{
 
 </section>
 
+<section class="section">
+<h2>Customer Reviews</h2>
+
+<div class="grid">
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<p>Best Chicken Pickle. Homemade taste!</p>
+<b>- Pradeep</b>
+</div>
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<p>Fresh and spicy. Loved it.</p>
+<b>- Amulya</b>
+</div>
+
+<div class="card">
+⭐⭐⭐⭐⭐
+<p>Mutton Boneless Pickle super.</p>
+<b>- Triveni</b>
+</div>
+
+</div>
+</section>
+
 <section class="section" id="contact" style="text-align:center">
 <h2>Get in Touch</h2>
 <p>📞 Call / WhatsApp: <b>9347014563</b></p>
@@ -469,7 +626,10 @@ footer{
 </section>
 
 <footer>
-<p><b>MD Pickles – Taste the Tradition</b></p>
+<h3 style="color:#d4af37;">MD PICKLES</h3>
+<p>Authentic Andhra Non-Veg Pickles</p>
+<p>📞 9347014563</p>
+<p>📍 Visakhapatnam</p>
 <p>© 2026 MD Pickles. All Rights Reserved.</p>
 </footer>
 
@@ -479,7 +639,7 @@ footer{
 let cart=[];
 
 // Initialize product cards
-document.querySelectorAll('.card').forEach(card => {
+document.querySelectorAll('#products .card').forEach(card => {
   let selectedPrice = parseInt(card.querySelector('.size-btn.selected').dataset.price);
   let quantity = 1;
 
@@ -556,10 +716,10 @@ function updateCart() {
 
 // WhatsApp checkout
 document.getElementById('checkout').addEventListener('click', () => {
+ const name = document.getElementById('name').value.trim();
+const phone = document.getElementById('phone').value.trim();
+const address = document.getElementById('address').value.trim();
 
-  const name = document.getElementById('name').value.trim();
-  const phone = document.getElementById('phone').value.trim();
-  const address = document.getElementById('address').value.trim();
 
   if (!name || !phone || !address) {
     alert('Please fill in all your details.');
@@ -571,49 +731,24 @@ document.getElementById('checkout').addEventListener('click', () => {
     return;
   }
 
-  let message = `Order Details From MD Pickles:%0A%0A`;
+  let message = `Order Details:%0A%0A`;
 
   cart.forEach(item => {
     message += `• ${item.name}%0A`;
-    message += `Size: ${item.size}%0A`;
-    message += `Quantity: ${item.qty}%0A`;
-    message += `Amount: Rs ${item.qty * item.price}%0A%0A`;
+    message += `  Size: ${item.size}%0A`;
+    message += `  Quantity: ${item.qty}%0A`;
+    message += `  Amount: Rs ${item.qty * item.price}%0A%0A`;
   });
 
-  const total = cart.reduce(
-    (sum, item) => sum + item.qty * item.price,
-    0
-  );
+  const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
 
   message += `Total: Rs ${total}%0A%0A`;
+  message += `Customer Details:%0A`;
   message += `Name: ${name}%0A`;
   message += `Phone: ${phone}%0A`;
   message += `Address: ${address}`;
 
-  const orderData = {
-    name,
-    phone,
-    address,
-    products: cart.map(item =>
-      `${item.name} (${item.size}) x ${item.qty}`
-    ).join(", "),
-    total
-  };
-
-  fetch(
-    "https://script.google.com/macros/s/AKfycbxpM2FF77TEDIVmWZtUHvn6MuV2ENcDukwTF__nBhwoxwtoaZAARU7M28bdpbooKkRBqg/exec",
-    {
-      method: "POST",
-      body: JSON.stringify(orderData)
-    }
-  )
-  .then(() => {
-    window.open(
-      `https://wa.me/919347014563?text=${message}`,
-      "_blank"
-    );
-  });
-
+  window.open(`https://wa.me/919347014563?text=${message}`, '_blank');
 });
 </script>
 
@@ -636,6 +771,8 @@ document.querySelectorAll('.card').forEach(c=>{
 
 </body>
 </html>
+
+
 
 
 
