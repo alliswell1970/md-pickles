@@ -748,7 +748,30 @@ const address = document.getElementById('address').value.trim();
   message += `Phone: ${phone}%0A`;
   message += `Address: ${address}`;
 
-  window.open(`https://wa.me/919347014563?text=${message}`, '_blank');
+ const orderData = {
+    name: name,
+    phone: phone,
+    address: address,
+    products: JSON.stringify(cart),
+    total: total
+};
+
+fetch(
+  "https://script.google.com/macros/s/AKfycbxpM2FF77TEDIVmWZtUHvn6MuV2ENcDukwTF__nBhwoxwtoaZAARU7M28bdpbooKkRBqg/exec",
+  {
+    method: "POST",
+    body: JSON.stringify(orderData)
+  }
+)
+.then(() => {
+    window.open(
+      `https://wa.me/919347014563?text=${message}`,
+      "_blank"
+    );
+})
+.catch(error => {
+    console.log(error);
+});
 });
 </script>
 
