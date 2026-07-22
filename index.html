@@ -773,12 +773,8 @@ fetch(
     );
 })
 .catch(error => {
-    console.log(error);
-});
-})
-.catch(error => {
-    console.log(error);
-});
+    console.error(error);
+    alert("Order save failed");
 });
 </script>
 
