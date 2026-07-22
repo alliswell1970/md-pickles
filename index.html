@@ -731,22 +731,22 @@ const address = document.getElementById('address').value.trim();
     return;
   }
 
-  let message = `Order Details:%0A%0A`;
+  let message = `Order Details:\n\n`;
 
-  cart.forEach(item => {
-    message += `• ${item.name}%0A`;
-    message += `  Size: ${item.size}%0A`;
-    message += `  Quantity: ${item.qty}%0A`;
-    message += `  Amount: Rs ${item.qty * item.price}%0A%0A`;
-  });
+ cart.forEach(item => {
+  message += `• ${item.name}\n`;
+  message += `Size: ${item.size}\n`;
+  message += `Quantity: ${item.qty}\n`;
+  message += `Amount: Rs ${item.qty * item.price}\n\n`;
+});
 
   const total = cart.reduce((sum, item) => sum + item.qty * item.price, 0);
 
-  message += `Total: Rs ${total}%0A%0A`;
-  message += `Customer Details:%0A`;
-  message += `Name: ${name}%0A`;
-  message += `Phone: ${phone}%0A`;
-  message += `Address: ${address}`;
+ message += `Total: Rs ${total}\n\n`;
+message += `Customer Details:\n`;
+message += `Name: ${name}\n`;
+message += `Phone: ${phone}\n`;
+message += `Address: ${address}`;
 
  const orderData = {
     name: name,
