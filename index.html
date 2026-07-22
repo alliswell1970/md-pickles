@@ -752,10 +752,16 @@ const address = document.getElementById('address').value.trim();
     name: name,
     phone: phone,
     address: address,
-    products: JSON.stringify(cart),
+   products: cart.map(item => item.name).join(", "),
+size: cart.map(item => item.size).join(", "),
+price: cart.map(item => item.price).join(", "),
+quantity: cart.map(item => item.qty).join(", "),
     total: total
 };
-
+const total = cart.reduce(
+  (sum, item) => sum + item.qty * item.price,
+  0
+);
 fetch(
   "https://script.google.com/macros/s/AKfycbxpM2FF77TEDIVmWZtUHvn6MuV2ENcDukwTF__nBhwoxwtoaZAARU7M28bdpbooKkRBqg/exec",
   {
