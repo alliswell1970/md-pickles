@@ -763,22 +763,28 @@ fetch(
   "https://script.google.com/macros/s/AKfycbxpM2FF77TEDIVmWZtUHvn6MuV2ENcDukwTF__nBhwoxwtoaZAARU7M28bdpbooKkRBqg/exec",
   {
     method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
     body: JSON.stringify(orderData)
   }
 )
-.then(() => {
+.then(response => response.text())
+.then(data => {
 
-    const whatsappUrl =
+    let whatsappUrl =
       "https://wa.me/919347014563?text=" +
       encodeURIComponent(message);
 
-    window.open(whatsappUrl, "_blank");
+    window.location.href = whatsappUrl;
 
 })
 .catch(error => {
-    console.error(error);
+    alert("Error: " + error);
+    console.log(error);
 });
-}); 
+
+});
 </script>
 
 
