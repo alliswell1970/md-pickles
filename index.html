@@ -767,14 +767,16 @@ fetch(
   }
 )
 .then(() => {
-    window.open(
-      `https://wa.me/919347014563?text=${message}`,
-      "_blank"
-    );
+
+    const whatsappUrl =
+      "https://wa.me/919347014563?text=" +
+      encodeURIComponent(message);
+
+    window.open(whatsappUrl, "_blank");
+
 })
 .catch(error => {
     console.error(error);
-    alert("Order save failed");
 });
 </script>
 
