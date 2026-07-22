@@ -758,10 +758,7 @@ price: cart.map(item => item.price).join(", "),
 quantity: cart.map(item => item.qty).join(", "),
     total: total
 };
-const total = cart.reduce(
-  (sum, item) => sum + item.qty * item.price,
-  0
-);
+
 fetch(
   "https://script.google.com/macros/s/AKfycbxpM2FF77TEDIVmWZtUHvn6MuV2ENcDukwTF__nBhwoxwtoaZAARU7M28bdpbooKkRBqg/exec",
   {
@@ -777,7 +774,10 @@ fetch(
     products: JSON.stringify(cart),
     total: total
 };
-
+const total = cart.reduce(
+  (sum, item) => sum + item.qty * item.price,
+  0
+);
 fetch(
   "https://script.google.com/macros/s/AKfycbxpM2FF77TEDIVmWZtUHvn6MuV2ENcDukwTF__nBhwoxwtoaZAARU7M28bdpbooKkRBqg/exec",
   {
